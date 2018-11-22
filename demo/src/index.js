@@ -129,7 +129,7 @@ const messageHandler = (message, self) => {
       if (message.uuid !== self.uuid) {
         const nb = getInitialNB()
         const initialChange = Automerge.getChanges(nb, self.state.notebook)
-        self.hub.broadcast('my-channel', {type: 'updateLayout', 
+        self.hub.broadcast(self.props.channelName, {type: 'updateLayout', 
                                           uuid: self.uuid, 
                                           changes: initialChange
                                       })
@@ -144,14 +144,14 @@ class Notebook extends React.Component {
   state = {caret: null, focused: null, notebook: getInitialNB()}
   
   componentDidMount() {
-    this.hub = signalhub('my-app-name', [
-      'http://localhost:8080'
+    this.hub = signalhub(this.props.appName, [
+      this.props.signalServer
     ])
     self = this
-    this.hub.subscribe('my-channel')
+    this.hub.subscribe(this.props.channelName)
       .on('data', (message) => messageHandler(message, self))
     
-    this.hub.broadcast('my-channel', {type: 'getInitial', uuid: this.uuid})
+    this.hub.broadcast(this.props.channelName, {type: 'getInitial', uuid: this.uuid})
 
   }
 
@@ -172,7 +172,7 @@ class Notebook extends React.Component {
           const newNotebook = Automerge.applyChanges(this.state.notebook, changes)
           this.setState({notebook: newNotebook})
 
-          this.hub.broadcast('my-channel', {type: 'updateLayout', 
+          this.hub.broadcast(this.props.channelName, {type: 'updateLayout', 
                                             uuid: this.uuid,
                                             changes: changes
                                           })
@@ -195,6 +195,6 @@ class Notebook extends React.Component {
 }
 
 render(
-  <Notebook/>,
+  <Notebook channelName='demo-nb' appName='collaborative-notebook-demo' signalServer='https://signalhub.jannisr.de/'/>,
   document.getElementById('demo')
 )

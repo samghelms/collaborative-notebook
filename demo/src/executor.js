@@ -13,7 +13,7 @@
 
 var signalhub = require('signalhub')
 var hub = signalhub('my-app-name', [
-  'http://localhost:8080'
+  'https://signalhub-hzbibrznqa.now.sh'
 ])
 
 // import {uuid} from './utils'
