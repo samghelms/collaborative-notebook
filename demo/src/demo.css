@@ -1,0 +1,146 @@
+
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  background: #f3f0eb;
+  margin: 0;
+}
+
+
+.header {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.header h1 {
+  font-weight: 100;
+}
+
+.slice {
+  /*border: 1px solid #d8d8d8;*/
+  min-height: 100px;
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.17);
+  transition: opacity 200ms ease-in;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+
+
+.bread-col.dragging .slice {
+opacity: 0.3;
+}
+
+
+
+.slice.dragging {
+  opacity: 0.3;
+}
+
+.slice .body {
+  padding: 10px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.slice-header {
+  padding: 7px 10px;
+  /* color: white; */
+  background: #ffa116;
+  cursor: pointer;
+  display: flex;
+  white-space: nowrap;
+}
+
+.slice-header button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.slice-header button:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.slice-header .button-toggle {
+  font-size: 11px;
+  margin-top: 5px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: gray;
+  margin-right: 5px;
+  -webkit-user-select: none;
+}
+
+.slice-header .button-toggle.active {
+  color: purple;
+}
+
+.slice-header .button:hover {
+color: black;
+}
+
+.slice-header .button.active {
+  color: purple;
+}
+
+
+
+
+
+.fake-slice {
+border: 2px dashed #d8d8d8;
+border-radius: 2px;
+min-height: 30px;
+padding-bottom: 20px;
+text-align: center;
+font-size: 100px;
+color: #d8d8d8;
+-webkit-user-select: none;
+cursor: pointer;
+flex-grow: 1;
+transition: all 200ms ease-in;
+  margin: 0 19px;
+}
+
+.fake-slice:hover {
+border: 2px dashed gray;
+color: gray;
+}
+
+
+
+@media (max-width: 700px) {
+  .bread-row > span {
+      display: block;
+  }
+
+  .vertical-divider {
+      display: none;
+  }
+
+  .bread-col {
+    padding: 5px 10px;
+  }
+}
+
+@media (min-width: 700px) {
+.row-1 {
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
