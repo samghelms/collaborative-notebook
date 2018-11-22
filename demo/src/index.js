@@ -85,7 +85,7 @@ const getChanges = (oldNotebook, trigger, view, kwargs) => {
 
       case 'insert-item':
         let {rowi: rowiInsertItem, coli: coliInsertItem} = kwargs
-        newRows[rowiInsertItem].items.splice(coliInsertItem, 0, view)
+        nb.layout[rowiInsertItem].items.splice(coliInsertItem, 0, view)
         return
 
       case 'fork':

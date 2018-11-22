@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "run-executor": "babel-node demo/src/testPyShell.mjs",
-    "gh-pages": "git subtree push --prefix demo/dist/ origin gh-pages"
+    "gh-pages": "nwb build-demo && git subtree push --prefix demo/dist/ origin gh-pages"
   },
   "author": "Samuel Helms",
   "license": "ISC",
