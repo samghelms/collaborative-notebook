@@ -1,4 +1,4 @@
-# Collaborative Notebook
+# Collaborative notebook
 
 This is a demo that shows how conflict-free replicated data types (CRDT's) could allow collaborative editing on a notebook application like Jupyter via peer-to-peer communication.
 
@@ -8,10 +8,10 @@ Try the demo out by opening up multiple tabs and chatting with yourself or some 
 
 https://samghelms.github.io/collaborative-notebook/
 
-# example
+# Example
 
-![gif](collab_gif.gif)
+<img src="collab_gif.gif" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="800"/>
 
-# running locally
+# Running locally
 
 `cd` into the repo and run `nwb serve-react-demo`
