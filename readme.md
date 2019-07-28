@@ -10,7 +10,7 @@ https://samghelms.github.io/collaborative-notebook/
 
 # Example
 
-<img src="collab_gif.gif" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="800"/>
+<img src="./demo.gif" width="800"/>
 
 # Running locally
 
